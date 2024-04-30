@@ -1,0 +1,82 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+        <button mat-raised-button color="primary">
+            User Dashboard
+        </button>
+    </mat-drawer>
+    <button mat-raised-button color="primary" class="marginleft20" (click)="drawer.toggle()">
+        Toggle sidenav
+    </button>
+    <div class="example-sidenav-content marginleft20">
+        <div class="container">
+            <div class="main-body">
+                <div fxLayout="row" fxLayoutGap="30">
+                    <div fxLayoutAlign="center center" fxFlex="20">
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <div class="single_advisor_profile wow fadeInUp" data-wow-delay="0.3s"
+                                style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+                                <div class="advisor_thumb"><img src="https://bootdey.com/img/Content/avatar/avatar7.png"
+                                        alt="">
+                                    <div class="social-info"><a href="#"><i class="fa fa-facebook"></i></a><a
+                                            href="#"><i class="fa fa-twitter"></i></a><a href="#"><i
+                                                class="fa fa-linkedin"></i></a></div>
+                                </div>
+                                <div class="single_advisor_details_info">
+                                    <h6>{{user.userName}}</h6>
+                                    <p class="designation">{{user.userAddress}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8" fxFlex="20">
+                        <div class="card" fxLayout="column" fxLayoutAlign="center center">
+                            <div class="card-body">
+                                <div class="row mb-3">
+                                    <div class="col-sm-9 text-secondary">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Full Name</mat-label>
+                                            <input matInput value={{user.userName}} readonly="true">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-sm-9 text-secondary">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Email</mat-label>
+                                            <input matInput value={{user.userEmail}} readonly="true">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-sm-9 text-secondary">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Mobile No</mat-label>
+                                            <input matInput value={{user.userMobile}} [(ngModel)]="userMobile">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-sm-9 text-secondary">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Full Address</mat-label>
+                                            <textarea matInput value={{user.userAddress}}
+                                                [(ngModel)]="userAddress"></textarea>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-3"></div>
+                                    <div class="col-sm-9 text-secondary ">
+                                        <button mat-raised-button color="primary" class="btn btn-primary px-4 "
+                                            (click)="SaveData()">Save Changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</mat-drawer-container>
